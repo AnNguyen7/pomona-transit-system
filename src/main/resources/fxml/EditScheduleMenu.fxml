@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.EditScheduleMenuController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <Text text="Edit Trip Schedule">
+        <font>
+            <Font size="24.0" name="System Bold"/>
+        </font>
+    </Text>
+
+    <Text text="Select an option:">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+
+    <VBox spacing="15.0" alignment="CENTER">
+        <Button text="Delete a Trip Offering" onAction="#handleDeleteOffering" prefWidth="250.0" prefHeight="40.0" style="-fx-font-size: 13px;"/>
+        <Button text="Add Trip Offerings" onAction="#handleAddOfferings" prefWidth="250.0" prefHeight="40.0" style="-fx-font-size: 13px;"/>
+        <Button text="Change Driver for Trip Offering" onAction="#handleChangeDriver" prefWidth="250.0" prefHeight="40.0" style="-fx-font-size: 13px;"/>
+        <Button text="Change Bus for Trip Offering" onAction="#handleChangeBus" prefWidth="250.0" prefHeight="40.0" style="-fx-font-size: 13px;"/>
+    </VBox>
+
+    <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="150.0" prefHeight="35.0"/>
+</VBox>

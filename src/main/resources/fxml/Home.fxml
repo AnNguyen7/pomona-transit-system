@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="30.0" style="-fx-background-color: #0f1117;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.HomeController">
+    <padding>
+        <Insets bottom="60.0" left="60.0" right="60.0" top="60.0"/>
+    </padding>
+
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="8.0">
+        <Text text="POMONA TRANSIT SYSTEM">
+            <font>
+                <Font name="Space Grotesk Bold" size="42.0"/>
+            </font>
+            <fill>
+                <javafx.scene.paint.LinearGradient startX="0.0" startY="0.0" endX="1.0" endY="0.0">
+                    <stops>
+                        <javafx.scene.paint.Stop offset="0.0">
+                            <color>
+                                <javafx.scene.paint.Color red="0.38" green="0.647" blue="0.98" opacity="1.0"/>
+                            </color>
+                        </javafx.scene.paint.Stop>
+                        <javafx.scene.paint.Stop offset="0.5">
+                            <color>
+                                <javafx.scene.paint.Color red="0.52" green="0.396" blue="0.98" opacity="1.0"/>
+                            </color>
+                        </javafx.scene.paint.Stop>
+                        <javafx.scene.paint.Stop offset="1.0">
+                            <color>
+                                <javafx.scene.paint.Color red="0.78" green="0.35" blue="0.98" opacity="1.0"/>
+                            </color>
+                        </javafx.scene.paint.Stop>
+                    </stops>
+                </javafx.scene.paint.LinearGradient>
+            </fill>
+            <style>
+                -fx-font-weight: 900;
+                -fx-letter-spacing: 2px;
+            </style>
+        </Text>
+
+        <Text text="Database Management Interface">
+            <font>
+                <Font name="IBM Plex Sans" size="14.0"/>
+            </font>
+            <style>
+                -fx-fill: #6b7280;
+                -fx-font-weight: 400;
+                -fx-letter-spacing: 1px;
+            </style>
+        </Text>
+    </VBox>
+
+    <!-- Button Grid -->
+    <HBox alignment="CENTER" spacing="30.0">
+        <VBox spacing="16.0" alignment="CENTER">
+            <!-- Query Operations - Blue -->
+            <Button fx:id="btnDisplaySchedule" text="Display Trip Schedule" onAction="#handleDisplaySchedule"
+                    prefWidth="260.0" prefHeight="55.0"
+                    style="-fx-font-family: 'IBM Plex Sans Medium';
+                           -fx-font-size: 13px;
+                           -fx-font-weight: 600;
+                           -fx-background-color: #1e293b;
+                           -fx-text-fill: #60a5fa;
+                           -fx-background-radius: 10px;
+                           -fx-border-color: #1e40af;
+                           -fx-border-width: 1px;
+                           -fx-border-radius: 10px;
+                           -fx-cursor: hand;
+                           -fx-letter-spacing: 0.5px;"/>
+
+            <Button fx:id="btnEditSchedule" text="Edit Schedule" onAction="#handleEditSchedule"
+                    prefWidth="260.0" prefHeight="55.0"
+                    style="-fx-font-family: 'IBM Plex Sans Medium';
+                           -fx-font-size: 13px;
+                           -fx-font-weight: 600;
+                           -fx-background-color: #1e293b;
+                           -fx-text-fill: #60a5fa;
+                           -fx-background-radius: 10px;
+                           -fx-border-color: #1e40af;
+                           -fx-border-width: 1px;
+                           -fx-border-radius: 10px;
+                           -fx-cursor: hand;
+                           -fx-letter-spacing: 0.5px;"/>
+
+            <Button fx:id="btnDisplayStops" text="Display Stops" onAction="#handleDisplayStops"
+                    prefWidth="260.0" prefHeight="55.0"
+                    style="-fx-font-family: 'IBM Plex Sans Medium';
+                           -fx-font-size: 13px;
+                           -fx-font-weight: 600;
+                           -fx-background-color: #1e293b;
+                           -fx-text-fill: #60a5fa;
+                           -fx-background-radius: 10px;
+                           -fx-border-color: #1e40af;
+                           -fx-border-width: 1px;
+                           -fx-border-radius: 10px;
+                           -fx-cursor: hand;
+                           -fx-letter-spacing: 0.5px;"/>
+
+            <Button fx:id="btnWeeklySchedule" text="Weekly Driver Schedule" onAction="#handleWeeklySchedule"
+                    prefWidth="260.0" prefHeight="55.0"
+                    style="-fx-font-family: 'IBM Plex Sans Medium';
+                           -fx-font-size: 13px;
+                           -fx-font-weight: 600;
+                           -fx-background-color: #1e293b;
+                           -fx-text-fill: #60a5fa;
+                           -fx-background-radius: 10px;
+                           -fx-border-color: #1e40af;
+                           -fx-border-width: 1px;
+                           -fx-border-radius: 10px;
+                           -fx-cursor: hand;
+                           -fx-letter-spacing: 0.5px;"/>
+        </VBox>
+
+        <VBox spacing="16.0" alignment="CENTER">
+            <!-- Add Operations - Green -->
+            <Button fx:id="btnAddDriver" text="Add Driver" onAction="#handleAddDriver"
+                    prefWidth="260.0" prefHeight="55.0"
+                    style="-fx-font-family: 'IBM Plex Sans Medium';
+                           -fx-font-size: 13px;
+                           -fx-font-weight: 600;
+                           -fx-background-color: #1e293b;
+                           -fx-text-fill: #34d399;
+                           -fx-background-radius: 10px;
+                           -fx-border-color: #059669;
+                           -fx-border-width: 1px;
+                           -fx-border-radius: 10px;
+                           -fx-cursor: hand;
+                           -fx-letter-spacing: 0.5px;"/>
+
+            <Button fx:id="btnAddBus" text="Add Bus" onAction="#handleAddBus"
+                    prefWidth="260.0" prefHeight="55.0"
+                    style="-fx-font-family: 'IBM Plex Sans Medium';
+                           -fx-font-size: 13px;
+                           -fx-font-weight: 600;
+                           -fx-background-color: #1e293b;
+                           -fx-text-fill: #34d399;
+                           -fx-background-radius: 10px;
+                           -fx-border-color: #059669;
+                           -fx-border-width: 1px;
+                           -fx-border-radius: 10px;
+                           -fx-cursor: hand;
+                           -fx-letter-spacing: 0.5px;"/>
+
+            <!-- Delete Operation - Red -->
+            <Button fx:id="btnDeleteBus" text="Delete Bus" onAction="#handleDeleteBus"
+                    prefWidth="260.0" prefHeight="55.0"
+                    style="-fx-font-family: 'IBM Plex Sans Medium';
+                           -fx-font-size: 13px;
+                           -fx-font-weight: 600;
+                           -fx-background-color: #1e293b;
+                           -fx-text-fill: #f87171;
+                           -fx-background-radius: 10px;
+                           -fx-border-color: #dc2626;
+                           -fx-border-width: 1px;
+                           -fx-border-radius: 10px;
+                           -fx-cursor: hand;
+                           -fx-letter-spacing: 0.5px;"/>
+
+            <!-- Record Operation - Purple -->
+            <Button fx:id="btnActualTripData" text="Record Actual Trip Data" onAction="#handleActualTripData"
+                    prefWidth="260.0" prefHeight="55.0"
+                    style="-fx-font-family: 'IBM Plex Sans Medium';
+                           -fx-font-size: 13px;
+                           -fx-font-weight: 600;
+                           -fx-background-color: #1e293b;
+                           -fx-text-fill: #a78bfa;
+                           -fx-background-radius: 10px;
+                           -fx-border-color: #7c3aed;
+                           -fx-border-width: 1px;
+                           -fx-border-radius: 10px;
+                           -fx-cursor: hand;
+                           -fx-letter-spacing: 0.5px;"/>
+        </VBox>
+    </HBox>
+
+    <!-- Footer -->
+    <Text text="An Nguyen &amp; Viet • CS 4350 • 2025">
+        <font>
+            <Font name="JetBrains Mono" size="11.0"/>
+        </font>
+        <style>
+            -fx-fill: #4b5563;
+            -fx-font-weight: 300;
+        </style>
+    </Text>
+</VBox>

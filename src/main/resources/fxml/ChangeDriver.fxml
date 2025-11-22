@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.ChangeDriverController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+
+    <Text text="Change a Driver">
+        <font>
+            <Font size="24.0" name="System Bold"/>
+        </font>
+    </Text>
+
+    <HBox spacing="15.0" alignment="CENTER">
+        <VBox spacing="5.0">
+            <Label text="Trip Number:"/>
+            <TextField fx:id="txtTripNumber" prefWidth="100.0"/>
+        </VBox>
+        <VBox spacing="5.0">
+            <Label text="Date:"/>
+            <DatePicker fx:id="datePicker" prefWidth="150.0"/>
+        </VBox>
+        <VBox spacing="5.0">
+            <Label text="Scheduled Start Time:"/>
+            <TextField fx:id="txtStartTime" promptText="HH:MM(am/pm)" prefWidth="150.0"/>
+        </VBox>
+        <VBox spacing="5.0">
+            <Label text="Change Driver Name:"/>
+            <TextField fx:id="txtNewDriver" prefWidth="150.0"/>
+        </VBox>
+    </HBox>
+
+    <TableView fx:id="tableOfferings" prefHeight="300.0" prefWidth="800.0">
+        <columns>
+            <TableColumn fx:id="colTripNumber" text="TripNumber" prefWidth="100.0"/>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="120.0"/>
+            <TableColumn fx:id="colStartTime" text="ScheduledStartTime" prefWidth="150.0"/>
+            <TableColumn fx:id="colArrivalTime" text="ScheduledArrivalTime" prefWidth="150.0"/>
+            <TableColumn fx:id="colDriver" text="DriverName" prefWidth="140.0"/>
+            <TableColumn fx:id="colBus" text="BusID" prefWidth="140.0"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="15.0" alignment="CENTER">
+        <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="120.0" prefHeight="35.0"/>
+        <Button text="Update" onAction="#handleUpdate" prefWidth="120.0" prefHeight="35.0" style="-fx-background-color: #5cb85c; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>

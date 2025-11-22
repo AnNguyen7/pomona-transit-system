@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.DisplayTripScheduleResultController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <Text text="Trip Schedule Result">
+        <font>
+            <Font size="24.0" name="System Bold"/>
+        </font>
+    </Text>
+
+    <HBox spacing="30.0" alignment="CENTER">
+        <Text fx:id="txtStartLocation" text="Start Location: ">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Text>
+        <Text fx:id="txtDestination" text="Destination Location: ">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Text>
+    </HBox>
+
+    <Text fx:id="txtDate" text="Date: ">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
+
+    <TableView fx:id="tableSchedule" prefHeight="300.0" prefWidth="700.0">
+        <columns>
+            <TableColumn fx:id="colStartTime" text="ScheduledStartTime" prefWidth="170.0"/>
+            <TableColumn fx:id="colArrivalTime" text="ScheduledArrivalTime" prefWidth="170.0"/>
+            <TableColumn fx:id="colDriver" text="DriverName" prefWidth="180.0"/>
+            <TableColumn fx:id="colBus" text="BusID" prefWidth="180.0"/>
+        </columns>
+    </TableView>
+
+    <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="150.0" prefHeight="35.0"/>
+</VBox>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.AddBusController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <Text text="Add a Bus">
+        <font>
+            <Font size="24.0" name="System Bold"/>
+        </font>
+    </Text>
+
+    <VBox spacing="15.0" alignment="CENTER_LEFT" prefWidth="400.0">
+        <Label text="Bus ID:" style="-fx-font-size: 14px;"/>
+        <TextField fx:id="txtBusID" promptText="e.g., B25"/>
+
+        <Label text="Model:" style="-fx-font-size: 14px;"/>
+        <TextField fx:id="txtModel" promptText="e.g., model6"/>
+
+        <Label text="Year:" style="-fx-font-size: 14px;"/>
+        <TextField fx:id="txtYear" promptText="e.g., 2024"/>
+    </VBox>
+
+    <HBox spacing="15.0" alignment="CENTER">
+        <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="120.0" prefHeight="35.0"/>
+        <Button text="Add Bus" onAction="#handleAddBus" prefWidth="120.0" prefHeight="35.0" style="-fx-background-color: #5cb85c; -fx-text-fill: white;"/>
+    </HBox>
+
+    <TableView fx:id="tableBuses" prefHeight="250.0" prefWidth="500.0">
+        <columns>
+            <TableColumn fx:id="colBusID" text="Bus ID" prefWidth="166.0"/>
+            <TableColumn fx:id="colModel" text="Model" prefWidth="167.0"/>
+            <TableColumn fx:id="colYear" text="Year" prefWidth="167.0"/>
+        </columns>
+    </TableView>
+</VBox>

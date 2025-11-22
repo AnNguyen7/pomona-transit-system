@@ -1,0 +1,32 @@
+# Compiled class files
+*.class
+target/
+
+# Database files
+*.db
+*.db-journal
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.DisplayStopsController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <Text text="Display Stops of a Trip">
+        <font>
+            <Font size="24.0" name="System Bold"/>
+        </font>
+    </Text>
+
+    <HBox spacing="10.0" alignment="CENTER">
+        <Label text="Trip Number:" style="-fx-font-size: 14px;"/>
+        <TextField fx:id="txtTripNumber" prefWidth="150.0"/>
+        <Button text="Search" onAction="#handleSearch" prefWidth="100.0" prefHeight="35.0" style="-fx-background-color: #5cb85c; -fx-text-fill: white;"/>
+    </HBox>
+
+    <TableView fx:id="tableStops" prefHeight="350.0" prefWidth="700.0">
+        <columns>
+            <TableColumn fx:id="colTripNumber" text="TripNumber" prefWidth="120.0"/>
+            <TableColumn fx:id="colStopNumber" text="StopNumber" prefWidth="120.0"/>
+            <TableColumn fx:id="colSequence" text="SequenceNumber" prefWidth="150.0"/>
+            <TableColumn fx:id="colDrivingTime" text="DrivingTime" prefWidth="150.0"/>
+            <TableColumn fx:id="colStopAddress" text="StopAddress" prefWidth="160.0"/>
+        </columns>
+    </TableView>
+
+    <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="150.0" prefHeight="35.0"/>
+</VBox>

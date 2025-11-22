@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.AddDriverController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <Text text="Add a Driver">
+        <font>
+            <Font size="24.0" name="System Bold"/>
+        </font>
+    </Text>
+
+    <VBox spacing="15.0" alignment="CENTER_LEFT" prefWidth="400.0">
+        <Label text="Driver Name:" style="-fx-font-size: 14px;"/>
+        <TextField fx:id="txtDriverName"/>
+
+        <Label text="Driver Telephone Number:" style="-fx-font-size: 14px;"/>
+        <TextField fx:id="txtPhoneNumber" promptText="e.g., 123-456-7890"/>
+    </VBox>
+
+    <HBox spacing="15.0" alignment="CENTER">
+        <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="120.0" prefHeight="35.0"/>
+        <Button text="Add Driver" onAction="#handleAddDriver" prefWidth="120.0" prefHeight="35.0" style="-fx-background-color: #5cb85c; -fx-text-fill: white;"/>
+    </HBox>
+
+    <TableView fx:id="tableDrivers" prefHeight="250.0" prefWidth="500.0">
+        <columns>
+            <TableColumn fx:id="colDriverName" text="Driver Name" prefWidth="250.0"/>
+            <TableColumn fx:id="colPhoneNumber" text="Telephone Number" prefWidth="250.0"/>
+        </columns>
+    </TableView>
+</VBox>

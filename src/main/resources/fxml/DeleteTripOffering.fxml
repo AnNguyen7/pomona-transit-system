@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.DeleteTripOfferingController">
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@../styles/dark-theme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.DeleteTripOfferingController">
     <padding>
         <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
     </padding>
 
-    <Text text="Delete a Trip Offering">
+    <Text text="Delete a Trip Offering" styleClass="header">
         <font>
             <Font size="24.0" name="System Bold"/>
         </font>
@@ -43,7 +43,7 @@
     </TableView>
 
     <HBox spacing="15.0" alignment="CENTER">
-        <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="120.0" prefHeight="35.0"/>
-        <Button text="Remove" onAction="#handleRemove" prefWidth="120.0" prefHeight="35.0" style="-fx-background-color: #d9534f; -fx-text-fill: white;"/>
+        <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="140.0" prefHeight="35.0" styleClass="secondary"/>
+        <Button text="Remove" onAction="#handleRemove" prefWidth="120.0" prefHeight="35.0" styleClass="danger"/>
     </HBox>
 </VBox>

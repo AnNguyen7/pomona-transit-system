@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.WeeklyScheduleController">
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@../styles/dark-theme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.WeeklyScheduleController">
     <padding>
         <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
     </padding>
 
-    <Text text="Display Weekly Schedule of a Driver">
+    <Text text="Display Weekly Schedule of a Driver" styleClass="header">
         <font>
             <Font size="24.0" name="System Bold"/>
         </font>
@@ -25,7 +25,7 @@
             <Label text="Start Date:" style="-fx-font-size: 14px;"/>
             <DatePicker fx:id="datePickerStart" prefWidth="150.0"/>
         </VBox>
-        <Button text="Search" onAction="#handleSearch" prefWidth="100.0" prefHeight="35.0" style="-fx-background-color: #5cb85c; -fx-text-fill: white; -fx-alignment: baseline-center;" VBox.vgrow="NEVER">
+        <Button text="Search" onAction="#handleSearch" prefWidth="100.0" prefHeight="35.0" styleClass="success" VBox.vgrow="NEVER">
             <VBox.margin>
                 <Insets top="20.0"/>
             </VBox.margin>
@@ -43,5 +43,5 @@
         </columns>
     </TableView>
 
-    <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="150.0" prefHeight="35.0"/>
+    <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="150.0" prefHeight="35.0" styleClass="secondary"/>
 </VBox>

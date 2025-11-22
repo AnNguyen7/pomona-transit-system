@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.AddDriverController">
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@../styles/dark-theme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.AddDriverController">
     <padding>
         <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
     </padding>
 
-    <Text text="Add a Driver">
+    <Text text="Add a Driver" styleClass="header">
         <font>
             <Font size="24.0" name="System Bold"/>
         </font>
@@ -25,8 +25,8 @@
     </VBox>
 
     <HBox spacing="15.0" alignment="CENTER">
-        <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="120.0" prefHeight="35.0"/>
-        <Button text="Add Driver" onAction="#handleAddDriver" prefWidth="120.0" prefHeight="35.0" style="-fx-background-color: #5cb85c; -fx-text-fill: white;"/>
+        <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="140.0" prefHeight="35.0" styleClass="secondary"/>
+        <Button text="Add Driver" onAction="#handleAddDriver" prefWidth="120.0" prefHeight="35.0" styleClass="success"/>
     </HBox>
 
     <TableView fx:id="tableDrivers" prefHeight="250.0" prefWidth="500.0">

@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.EditScheduleMenuController">
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@../styles/dark-theme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.EditScheduleMenuController">
     <padding>
         <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
     </padding>
 
-    <Text text="Edit Trip Schedule">
+    <Text text="Edit Trip Schedule" styleClass="header">
         <font>
             <Font size="24.0" name="System Bold"/>
         </font>
@@ -29,5 +29,5 @@
         <Button text="Change Bus for Trip Offering" onAction="#handleChangeBus" prefWidth="250.0" prefHeight="40.0" style="-fx-font-size: 13px;"/>
     </VBox>
 
-    <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="150.0" prefHeight="35.0"/>
+    <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="150.0" prefHeight="35.0" styleClass="secondary"/>
 </VBox>

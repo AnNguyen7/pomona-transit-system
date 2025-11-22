@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.DisplayTripScheduleResultController">
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@../styles/dark-theme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.DisplayTripScheduleResultController">
     <padding>
         <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
     </padding>
 
-    <Text text="Trip Schedule Result">
+    <Text text="Trip Schedule Result" styleClass="header">
         <font>
             <Font size="24.0" name="System Bold"/>
         </font>
@@ -44,5 +44,5 @@
         </columns>
     </TableView>
 
-    <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="150.0" prefHeight="35.0"/>
+    <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="150.0" prefHeight="35.0" styleClass="secondary"/>
 </VBox>

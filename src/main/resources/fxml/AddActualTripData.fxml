@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.AddActualTripDataController">
+<VBox alignment="CENTER" spacing="15.0" stylesheets="@../styles/dark-theme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pts.controller.AddActualTripDataController">
     <padding>
         <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
     </padding>
 
-    <Text text="Add Actual Trip Stop Info">
+    <Text text="Add Actual Trip Stop Info" styleClass="header">
         <font>
             <Font size="24.0" name="System Bold"/>
         </font>
@@ -52,7 +52,7 @@
     </GridPane>
 
     <HBox spacing="15.0" alignment="CENTER">
-        <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="120.0" prefHeight="35.0"/>
-        <Button text="Submit" onAction="#handleSubmit" prefWidth="120.0" prefHeight="35.0" style="-fx-background-color: #5cb85c; -fx-text-fill: white;"/>
+        <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="140.0" prefHeight="35.0" styleClass="secondary"/>
+        <Button text="Submit" onAction="#handleSubmit" prefWidth="120.0" prefHeight="35.0" styleClass="success"/>
     </HBox>
 </VBox>

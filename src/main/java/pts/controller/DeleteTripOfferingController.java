@@ -74,6 +74,10 @@ public class DeleteTripOfferingController {
         }
 
         String date = datePicker.getValue().format(DateTimeFormatter.ISO_LOCAL_DATE);
+        
+        // Normalize time format to match database (e.g., "1:00pm" -> "01:00pm")
+        startTime = normalizeTimeFormat(startTime);
+        
         String query = "DELETE FROM TripOffering WHERE TripNumber = ? AND Date = ? AND ScheduledStartTime = ?";
 
         try (Connection conn = DatabaseConnection.getConnection();
@@ -98,6 +102,14 @@ public class DeleteTripOfferingController {
             e.printStackTrace();
             showAlert("Error", "Failed to delete: " + e.getMessage(), Alert.AlertType.ERROR);
         }
+    }
+
+    private String normalizeTimeFormat(String time) {
+        // Handle formats like "1:00pm" -> "01:00pm" or "9:30am" -> "09:30am"
+        if (time.matches("^\\d{1}:\\d{2}[ap]m$")) {
+            return "0" + time;
+        }
+        return time;
     }
 
     @FXML

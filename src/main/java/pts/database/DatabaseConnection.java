@@ -19,6 +19,10 @@ public class DatabaseConnection {
         try {
             if (connection == null || connection.isClosed()) {
                 connection = DriverManager.getConnection(DB_URL);
+                // CRITICAL: Enable foreign key constraints for SQLite
+                Statement stmt = connection.createStatement();
+                stmt.execute("PRAGMA foreign_keys = ON;");
+                stmt.close();
                 System.out.println("Connected to SQLite database successfully!");
             }
         } catch (SQLException e) {

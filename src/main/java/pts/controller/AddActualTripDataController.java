@@ -56,6 +56,9 @@ public class AddActualTripDataController {
             e.printStackTrace();
             if (e.getMessage().contains("FOREIGN KEY constraint failed")) {
                 showAlert("Error", "Invalid Trip Offering or Stop Number. Please check your input.", Alert.AlertType.ERROR);
+            } else if (e.getMessage().contains("PRIMARY KEY constraint failed") || 
+                       e.getMessage().contains("UNIQUE constraint failed")) {
+                showAlert("Error", "This actual trip stop info already exists in the database.", Alert.AlertType.ERROR);
             } else {
                 showAlert("Error", "Failed to add actual trip data: " + e.getMessage(), Alert.AlertType.ERROR);
             }

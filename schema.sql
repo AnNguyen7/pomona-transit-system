@@ -136,8 +136,6 @@ VALUES (3, 206, 2, '1h35min');
 
 -- Actual Trip Stop Info
 INSERT INTO ActualTripStopInfo (TripNumber, Date, ScheduledStartTime, StopNumber, ScheduledArrivalTime, ActualStartTime, ActualArrivalTime, NumberOfPassengerIn, NumberOfPassengerOut)
-VALUES (1, '2025-11-22', '07:30am', 201, '08:45am', '07:35am', '08:50am', 12, 4);
-INSERT INTO ActualTripStopInfo (TripNumber, Date, ScheduledStartTime, StopNumber, ScheduledArrivalTime, ActualStartTime, ActualArrivalTime, NumberOfPassengerIn, NumberOfPassengerOut)
 VALUES (1, '2025-11-22', '07:30am', 202, '08:45am', '07:40am', '08:55am', 18, 6);
 INSERT INTO ActualTripStopInfo (TripNumber, Date, ScheduledStartTime, StopNumber, ScheduledArrivalTime, ActualStartTime, ActualArrivalTime, NumberOfPassengerIn, NumberOfPassengerOut)
 VALUES (1, '2025-11-22', '10:00am', 201, '11:15am', '10:05am', '11:20am', 15, 8);

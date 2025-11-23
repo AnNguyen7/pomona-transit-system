@@ -55,4 +55,26 @@
         <Button text="Back to Home" onAction="#handleBackToHome" prefWidth="140.0" prefHeight="35.0" styleClass="secondary"/>
         <Button text="Submit" onAction="#handleSubmit" prefWidth="120.0" prefHeight="35.0" styleClass="success"/>
     </HBox>
+
+    <Separator prefWidth="200.0" />
+
+    <Text text="All Actual Trip Records" styleClass="header">
+        <font>
+            <Font size="20.0" name="System Bold"/>
+        </font>
+    </Text>
+
+    <TableView fx:id="tableActualTrips" prefHeight="300.0" prefWidth="800.0">
+        <columns>
+            <TableColumn fx:id="colTripNumber" text="Trip #" prefWidth="60.0"/>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="100.0"/>
+            <TableColumn fx:id="colScheduledStart" text="Sched Start" prefWidth="90.0"/>
+            <TableColumn fx:id="colStopNumber" text="Stop #" prefWidth="60.0"/>
+            <TableColumn fx:id="colScheduledArrival" text="Sched Arrival" prefWidth="95.0"/>
+            <TableColumn fx:id="colActualStart" text="Actual Start" prefWidth="90.0"/>
+            <TableColumn fx:id="colActualArrival" text="Actual Arrival" prefWidth="95.0"/>
+            <TableColumn fx:id="colPassengerIn" text="In" prefWidth="50.0"/>
+            <TableColumn fx:id="colPassengerOut" text="Out" prefWidth="50.0"/>
+        </columns>
+    </TableView>
 </VBox>

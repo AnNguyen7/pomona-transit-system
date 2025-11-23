@@ -1,12 +1,17 @@
 package pts.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import pts.database.DatabaseConnection;
+import pts.model.ActualTripStopInfo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.time.format.DateTimeFormatter;
 
 public class AddActualTripDataController {
@@ -20,6 +25,61 @@ public class AddActualTripDataController {
     @FXML private TextField txtActualArrivalTime;
     @FXML private TextField txtPassengerIn;
     @FXML private TextField txtPassengerOut;
+    
+    @FXML private TableView<ActualTripStopInfo> tableActualTrips;
+    @FXML private TableColumn<ActualTripStopInfo, Integer> colTripNumber;
+    @FXML private TableColumn<ActualTripStopInfo, String> colDate;
+    @FXML private TableColumn<ActualTripStopInfo, String> colScheduledStart;
+    @FXML private TableColumn<ActualTripStopInfo, Integer> colStopNumber;
+    @FXML private TableColumn<ActualTripStopInfo, String> colScheduledArrival;
+    @FXML private TableColumn<ActualTripStopInfo, String> colActualStart;
+    @FXML private TableColumn<ActualTripStopInfo, String> colActualArrival;
+    @FXML private TableColumn<ActualTripStopInfo, Integer> colPassengerIn;
+    @FXML private TableColumn<ActualTripStopInfo, Integer> colPassengerOut;
+
+    @FXML
+    private void initialize() {
+        // Set up table columns
+        colTripNumber.setCellValueFactory(new PropertyValueFactory<>("tripNumber"));
+        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        colScheduledStart.setCellValueFactory(new PropertyValueFactory<>("scheduledStartTime"));
+        colStopNumber.setCellValueFactory(new PropertyValueFactory<>("stopNumber"));
+        colScheduledArrival.setCellValueFactory(new PropertyValueFactory<>("scheduledArrivalTime"));
+        colActualStart.setCellValueFactory(new PropertyValueFactory<>("actualStartTime"));
+        colActualArrival.setCellValueFactory(new PropertyValueFactory<>("actualArrivalTime"));
+        colPassengerIn.setCellValueFactory(new PropertyValueFactory<>("numberOfPassengerIn"));
+        colPassengerOut.setCellValueFactory(new PropertyValueFactory<>("numberOfPassengerOut"));
+        
+        // Load all records
+        loadAllRecords();
+    }
+
+    private void loadAllRecords() {
+        ObservableList<ActualTripStopInfo> records = FXCollections.observableArrayList();
+        String query = "SELECT * FROM ActualTripStopInfo ORDER BY TripNumber, Date, ScheduledStartTime, StopNumber";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                records.add(new ActualTripStopInfo(
+                    rs.getInt("TripNumber"),
+                    rs.getString("Date"),
+                    rs.getString("ScheduledStartTime"),
+                    rs.getInt("StopNumber"),
+                    rs.getString("ScheduledArrivalTime"),
+                    rs.getString("ActualStartTime"),
+                    rs.getString("ActualArrivalTime"),
+                    rs.getInt("NumberOfPassengerIn"),
+                    rs.getInt("NumberOfPassengerOut")
+                ));
+            }
+            tableActualTrips.setItems(records);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private void handleSubmit() {
@@ -51,6 +111,7 @@ public class AddActualTripDataController {
 
             showAlert("Success", "Actual trip stop info added successfully!", Alert.AlertType.INFORMATION);
             clearFields();
+            loadAllRecords(); // Refresh the table
 
         } catch (Exception e) {
             e.printStackTrace();
